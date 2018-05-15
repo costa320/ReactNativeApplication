@@ -1,7 +1,9 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View,ImageBackground  } from 'react-native';
 /* components */
-import LogIn from './components/LogInComponent/logIn';
+/* import LogIn from './components/LogInComponent/logIn'; */
+import backgroundImage from './Multimedia/img/background.jpg';
+import LoginButton from './components/LogInComponent/logInButton';
 
 export default class App extends React.Component {
 
@@ -14,18 +16,15 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <LogIn/>
-      </View>
+      <ImageBackground  style={styles.container} source={backgroundImage}>
+        <LoginButton/>
+      </ImageBackground>
     );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: 'white',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flex: 1
   }
 });
