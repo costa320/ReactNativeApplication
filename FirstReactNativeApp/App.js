@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View,ImageBackground  } from 'react-native';
 /* components */
 /* import LogIn from './components/LogInComponent/logIn'; */
-import backgroundImage from './Multimedia/img/background.jpg';
+import backgroundImage from './assets/img/background.jpg';
 import LoginButton from './components/LogInComponent/logInButton';
 
 export default class App extends React.Component {
