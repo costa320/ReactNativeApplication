@@ -28,13 +28,21 @@ export default class App extends React.Component{
 
   render() {
     return (
-      <ImageBackground  style={styles.container} source={imageBackground}>
-        <Logo/>
-        <LoginButton/>
-        <RegistratiButton setDisplayRegisterView={this.setDisplayRegisterView}/>
-        
+      <View style={{flex:1}}>
+       <ImageBackground  style={styles.container} source={imageBackground}> 
+        <View style={styles.upperContainer}>
+          <Logo/>
+        </View>
+
+        <View style={styles.bottomContainer}>
+          <LoginButton/>
+          <RegistratiButton setDisplayRegisterView={this.setDisplayRegisterView}/>
+        </View>
+    {/* Finestre a comparsa */}
         <RegisterView setDisplayRegisterView={this.setDisplayRegisterView} displayRegisterView={this.state.displayRegisterView}/>
-      </ImageBackground >
+    {/* end finestre a comparsa */}
+       </ImageBackground > 
+      </View>
     );
   }
 }
@@ -42,5 +50,15 @@ export default class App extends React.Component{
 const styles = StyleSheet.create({
   container: {
     flex: 1
+  },
+  upperContainer:{
+    flex:1,
+/*     borderWidth: 3,
+    borderColor: 'red',  */
+  },
+  bottomContainer:{
+    flex:1,
+/*     borderWidth: 3,
+    borderColor: 'blue',  */
   }
 });

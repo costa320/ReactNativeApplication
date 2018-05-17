@@ -12,25 +12,21 @@ export default class Logo extends React.Component {
 
   render() {
     return (
-        <View style={styles.imgContainer}>
             <Image source={logo}
             style={styles.img}/>
-        </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-    /* BTN Logo */
-        imgContainer:{
-            marginTop:110,
-            marginLeft:45,
-            zIndex:9,
-        },
+
         img:{
-            width:225,
-            height:225,
+            marginTop:'5%',
+            marginLeft:'25%',
+            width:'50%',
+            height:'65%',
             zIndex:9,
+/*             borderWidth: 3,
+            borderColor: 'blue',  */
         }
-    /*end BTN Logo  */
 });

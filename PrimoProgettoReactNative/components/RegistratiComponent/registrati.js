@@ -1,5 +1,5 @@
 import React , { Component } from 'react';
-import { StyleSheet, Text,TextInput,Button,Alert, View, TouchableWithoutFeedback, Animated } from 'react-native';
+import { StyleSheet, Text,TextInput,Button,Alert, View, TouchableWithoutFeedback, Animated,PixelRatio } from 'react-native';
 
 export default class RegistratiButton extends React.Component {
 
@@ -40,8 +40,8 @@ export default class RegistratiButton extends React.Component {
             </View> */}
 
                 <TouchableWithoutFeedback  onPress={this.handleregistratiButtonClick}>
-                    <View>
-                        <Text style={styles.btnRegistratiTextStyle}>Register</Text>
+                    <View style={styles.viewContainer}> 
+                        <Text adjustsFontSizeToFit minimumFontScale={.5} numberOfLines={1} style={styles.btnRegistratiTextStyle}>Register</Text>
                     </View>
                 </TouchableWithoutFeedback>
         </View>         
@@ -50,23 +50,45 @@ export default class RegistratiButton extends React.Component {
   }
 }
 
+/* dinamic font  */
+var Font;
+var lineHeight;
+var pixelRatio = PixelRatio.get();
+ Alert.alert('pixelRatio: '+pixelRatio) 
+
+switch(pixelRatio){
+    case 1: Font=24;
+        break;
+    case 2: Font=24;
+        break;
+    case 3: Font=24;lineHeight=31;
+        break;
+    case 3.5:Font=35;
+        break;
+    
+}
+
+
 const styles = StyleSheet.create({
 
     /* BTN buttonRegistratiContainer */
     buttonRegistratiContainer:{
-            width:260,
-            height:25,
-            marginLeft:50,
-            marginRight:50,
-            borderWidth: 1,
-            borderColor: '#d6d7da', 
-            marginTop: 15,           
+            width:"60%",
+            height:'11%',
+            marginLeft:"20%", 
+            marginTop: '5%',  
+            borderWidth: 2,
+            borderColor: 'white', 
             backgroundColor: '#0066cc00',
         },
+        viewContainer:{
+
+                    },
         btnRegistratiTextStyle:{
             textAlign:'center',
-            lineHeight:25,
-            fontSize:15,
+            textAlignVertical: "center",
+            fontSize:Font, 
+            lineHeight:lineHeight,
             color:'white',
             fontFamily :'YatraOne-Regular',
         }
